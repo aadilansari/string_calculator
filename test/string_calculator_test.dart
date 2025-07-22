@@ -10,4 +10,7 @@ void main() {
   test('returns number for single input', () {
   expect(calc.add("1"), 1);
 });
+  test('returns sum for two numbers', () {
+  expect(calc.add("1,5"), 6);
+});
 }
