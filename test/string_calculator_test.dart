@@ -21,5 +21,15 @@ void main() {
 test('supports custom delimiter', () {
   expect(calc.add("//;\n1;2"), 3);
 });
+test('throws on single negative number', () {
+  expect(() => calc.add("1,-2"),
+      throwsA(predicate((e) => e is ArgumentError && e.message == 'negative numbers not allowed -2')));
+});
+
+test('throws on multiple negative numbers', () {
+  expect(() => calc.add("2,-4,3,-5"),
+      throwsA(predicate((e) => e is ArgumentError && e.message == 'negative numbers not allowed -4, -5')));
+});
+
 
 }
