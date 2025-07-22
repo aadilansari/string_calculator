@@ -12,9 +12,9 @@ void main() {
 });
   test('returns sum for two numbers', () {
   expect(calc.add("1,5"), 6);
+});
 
   test('handles new lines as delimiters', () {
   expect(calc.add("1\n2,3"), 6);
-});
 });
 }
